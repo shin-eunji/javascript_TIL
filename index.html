@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>javascrip</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.25/paper-full.min.js"></script>
 </head>
 <body>
-    <script>
+    <!-- <script>
         var person = {
             name = 'shin',
             age = 27
@@ -41,6 +42,50 @@
             round++;
             console.log(``)
         }
+    </script> -->
+    <canvas id="mainCanvas"></canvas>
+    <script>
+        paper.install(window);
+        paper.setup(document.getElementById('mainCanvas'));
+
+        //TODO
+        paper.view.draw();
+
+        var c = Shape.Circle(200, 200, 80);
+        c.fillcolor = 'green';
+        var text = new PointText(200,200);
+        text.jusrification = 'center';
+        text.fillColor = 'white';
+        text.fontSize = 20;
+        text.content = 'hellow world';
+
+        var tool = new Tool();
+            tool.onMouseDown = function(event) {
+                var c = Shape.Circle(event.point, 20);
+                c.fillColor = 'green';
+            }
+    </script>
+    <script>
+        /* let
+        ES6에서 생김.
+        변수선언할 때 유용하며, 1번만 쓰인다.
+        let 문 하나에서 변수는 여러개 선언할 수 있음. */
+        let targetTempC, //값을 할당하지 않았음.
+            room1 = "conference_room_a",
+            room2 = "lobby";
+        /* const
+        ES6에서 생김.
+        상수도 변수와 마찬가지로 값을 할당 받을 수 있음. 하지만 한 번 할당한 값을 바꿀 수 없음.
+        const도 상수 여러개를 선언할 수 있음.
+        상수 표기는 대문자와 스네이크 표기법만 사용합니다. (ROOM_TEMP_C) */
+        const ROOM_TEMP_C = 21.5, MAX_TEMP_C = 30;
     </script>
 </body>
+<style>
+    #mainCanvas {
+        width: 400px;
+        height: 400px;
+        border: 1px solid black;
+    }
+</style>
 </html>
