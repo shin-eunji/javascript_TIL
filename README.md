@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko-KR">
 <head>
-    <title>javascript</title>
 </head>
 <body>
     <h1>let</h1>
