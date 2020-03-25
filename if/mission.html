@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>체크박스 만들기</title>
+</head>
+<body>
+  <div class="d-checkbox">
+    <div class="checkbox"></div>
+    <span>체크박스-여기를 클릭해보세요</span>
+  </div>
+  <style>
+    .d-checkbox {
+      position: relative;
+      left: 100px;
+      top: 100px;
+    }
+    .d-checkbox .checkbox {
+      width: 20px;
+      height: 15px;
+      float: left;
+      background: red no-repeat;
+    }
+    .d-checkbox .checkbox.check {
+      background: blue no-repeat;
+    }
+  </style>
+  <script>
+    $(document).ready(function(){
+      var $chk = $('.d-checkbox .checkbox');
+
+      $('.d-checkbox').click(function() {
+        
+      })
+    })
+  </script>
+</body>
+</html>
