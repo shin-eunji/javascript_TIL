@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>1-list delete</title>
+  <style>
+    #testTable {
+      width: 500px;
+      margin: auto;
+      border-collapse: collapse;
+    }
+    #testTable th,
+    #testTable td {
+      padding: 5px 12px;
+      text-align: center;
+      border: 1px solid #ccc;
+    }
+    #testTable th {
+      background: #eee;
+    }
+    #testTable .btn_delete {
+      padding: 5px 10px;
+      background: #fbdb65;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <table id="testTable">
+  <colgroup>
+    <col style="width: 10%">
+    <col style="width: 70%">
+    <col style="width: 20%">
+  </colgroup>
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th>Contents</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>자바스크립트</td>
+      <td>
+        <button type="button" class="btn_delete">Delete</button>
+      </td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>알고리즘</td>
+      <td>
+        <button type="button" class="btn_delete">Delete</button>
+      </td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>자바</td>
+      <td>
+        <button type="button" class="btn_delete">Delete</button>
+      </td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>C언어</td>
+      <td>
+        <button type="button" class="btn_delete">Delete</button>
+      </td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>C#</td>
+      <td>
+        <button type="button" class="btn_delete">Delete</button>
+      </td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>파이썬</td>
+      <td>
+        <button type="button" class="btn_delete">Delete</button>
+      </td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>스프링</td>
+      <td>
+        <button type="button" class="btn_delete">Delete</button>
+      </td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>리액트</td>
+      <td>
+        <button type="button" class="btn_delete">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<script>
+var eventTarget = document.getElementsByClassName('btn_delete')
+
+for(var i = 0; i < eventTarget.length; i++) {
+  eventTarget[i].addEventListener('click', function() {
+    var parent = document.querySelector('#testTable tbody')
+
+    if(i > 1) {
+      parent.removeChild(this.parentElement.parentElement)
+      i --
+    } else {
+      alert('마지막 행은 삭제 불가합니다.')
+    }
+  })
+}
+</script>
+
+</body>
+</html>
